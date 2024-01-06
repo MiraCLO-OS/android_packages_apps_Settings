@@ -6338,5 +6338,23 @@ SPDX-License-Identifier: BSD-3-Clause-Clear -->
 
         <!-- This is the longest AndroidManifest.xml ever. -->
 
+
+        <!-- Screen refresh rate -->
+        <activity android:name="Settings$ScreenRefreshRateActivity"
+            android:label="@string/screen_refresh_rate_title"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.settings.REFRESH_RATE_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.android.settings.display.refreshrate.ScreenRefreshRateFragment"/>
+            <meta-data android:name="com.android.settings.HIGHLIGHT_MENU_KEY"
+                       android:value="@string/menu_key_display"/>
+            <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"
+                       android:value="true"/>
+        </activity>
+
     </application>
 </manifest>

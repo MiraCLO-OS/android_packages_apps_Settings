@@ -108,7 +108,7 @@ open class DisplayScreen :
                 R.string.category_name_display_controls,
             ) order -150 +=
                 {
-                    +PeakRefreshRateSwitchPreference()
+                    // Refresh rate is provided by the custom page in display_settings.xml.
                     if (Flags.catalystScreensaver()) +ScreensaverScreen.KEY
                 }
         }

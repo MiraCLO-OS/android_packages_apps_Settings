@@ -244,12 +244,11 @@
             settings:controller="com.android.settings.display.DisplayWhiteBalancePreferenceController"/>
 
         <Preference
-            android:key="refresh_rate"
-            android:title="@string/refresh_rate_title"
-            android:summary="@string/summary_placeholder"
-            android:fragment="co.aospa.settings.display.RefreshRateSettings"
+            android:key="screen_refresh_rate"
+            android:title="@string/screen_refresh_rate_title"
+            android:fragment="com.android.settings.display.refreshrate.ScreenRefreshRateFragment"
             settings:keywords="@string/keywords_refresh_rate"
-            settings:controller="co.aospa.settings.display.RefreshRatePreferenceController"/>
+            settings:controller="com.android.settings.display.refreshrate.ScreenRefreshRateController"/>
 
         <SwitchPreferenceCompat
             android:key="touch_polling"

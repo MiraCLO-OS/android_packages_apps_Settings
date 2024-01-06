@@ -90,3 +90,8 @@
 
 # Keep AOSPA settings classes
 -keep public class co.aospa.settings.** { *; }
+
+
+# Refresh-rate controllers and fragments are loaded from XML and manifest metadata.
+-keep class com.android.settings.display.refreshrate.** { *; }
+-keep class com.android.settings.fuelgauge.batterysaver.BatterySaverRefreshRatePreferenceController { *; }

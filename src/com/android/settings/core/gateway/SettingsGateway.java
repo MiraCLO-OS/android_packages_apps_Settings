@@ -223,6 +223,9 @@ import com.android.settings.wifi.p2p.WifiP2pSettings;
 import com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSettings2;
 import com.android.settings.wifi.tether.WifiTetherSettings;
 
+import com.android.settings.display.refreshrate.ScreenRefreshRateFragment;
+import com.android.settings.display.refreshrate.PerAppRefreshRateFragment;
+
 public class SettingsGateway {
 
     /**
@@ -230,6 +233,8 @@ public class SettingsGateway {
      * security exception if the fragment it needs to display is not in this list.
      */
     public static final String[] ENTRY_FRAGMENTS = {
+            ScreenRefreshRateFragment.class.getName(),
+            PerAppRefreshRateFragment.class.getName(),
             AdvancedConnectedDeviceDashboardFragment.class.getName(),
             CreateShortcut.class.getName(),
             BluetoothPairingDetail.class.getName(),
@@ -437,6 +442,7 @@ public class SettingsGateway {
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
+            Settings.ScreenRefreshRateActivity.class.getName(),
             // Home page
             Settings.NetworkDashboardActivity.class.getName(),
             Settings.ConnectedDeviceDashboardActivity.class.getName(),
