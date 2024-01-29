@@ -16,9 +16,9 @@ import java.util.List;
 
 import com.android.internal.display.RefreshRateManager;
 
-import com.android.settings.applications.perapp.PerAppConfigFragment;
+import com.android.settings.applications.perapp.PerAppListConfigFragment;
 
-public class PerAppRefreshRateFragment extends PerAppConfigFragment {
+public class PerAppRefreshRateFragment extends PerAppListConfigFragment {
 
     private DisplayRefreshRateHelper mHelper;
     private RefreshRateManager mRefreshRateManager;
