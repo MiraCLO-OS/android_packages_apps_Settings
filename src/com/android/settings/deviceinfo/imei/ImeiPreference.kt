@@ -100,7 +100,8 @@ class ImeiPreference(
 
     override fun storage(context: Context): KeyValueStore = createSummaryStorage(context, key)
 
-    override fun getSummary(context: Context): CharSequence? = getFormattedSummary()
+    override fun getSummary(context: Context): CharSequence? =
+        context.getString(R.string.device_info_protected_single_press)
 
     override fun bind(preference: Preference, metadata: PreferenceMetadata) {
         super.bind(preference, metadata)
@@ -108,9 +109,11 @@ class ImeiPreference(
     }
 
     override fun onCreate(context: PreferenceLifecycleContext) {
-        context.requirePreference<Preference>(key).onPreferenceClickListener =
+        val preference = context.requirePreference<Preference>(key)
+        preference.onPreferenceClickListener =
             Preference.OnPreferenceClickListener {
                 val slotId = if (index < imeiList.size) imeiList[index].slotId else index
+                preference.summary = getFormattedSummary()
                 ImeiInfoDialogFragment.show(context.childFragmentManager, slotId, formattedTitle)
                 return@OnPreferenceClickListener true
             }
