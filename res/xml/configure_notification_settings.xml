@@ -234,5 +234,13 @@
             android:summary="@string/heads_up_notifications_enabled_summary"
             android:defaultValue="true" />
 
+        <co.aospa.framework.preference.SystemPropertySwitchPreference
+            android:key="persist.sys.compact_heads_up_notification.always_show"
+            android:order="31"
+            android:title="@string/compact_heads_up_notifications_enabled_title"
+            android:summary="@string/compact_heads_up_notifications_enabled_summary"
+            android:defaultValue="false"
+            android:dependency="heads_up_notifications_enabled" />
+
     </PreferenceCategory>
 </PreferenceScreen>

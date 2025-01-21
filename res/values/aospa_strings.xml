@@ -151,6 +151,8 @@
     <!-- Heads-up -->
     <string name="heads_up_notifications_enabled_title">Heads-up</string>
     <string name="heads_up_notifications_enabled_summary">Display priority notifications in a small floating window</string>
+    <string name="compact_heads_up_notifications_enabled_title">Compact heads-up</string>
+    <string name="compact_heads_up_notifications_enabled_summary">Display notifications in compact size</string>
 
     <!-- Power menu on secure lockscreen -->
     <string name="secure_lockscreen_category_title">Secure lockscreen</string>
