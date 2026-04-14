@@ -159,4 +159,16 @@
     <string name="lockscreen_enable_power_menu_title">Power menu</string>
     <string name="lockscreen_enable_power_menu_summary">Allow accessing power menu on secure lockscreen</string>
 
+    <!-- Custom font -->
+    <string name="custom_font_title">Custom font</string>
+    <string name="custom_font_summary">Install a font file to use as the system font</string>
+    <string name="add_font">Add font</string>
+    <string name="reset_font">Reset</string>
+    <string name="toast_failed_apply_font">Failed to apply font</string>
+    <string name="toast_invalid_font_file">Invalid font file</string>
+    <string name="reboot_required_title">Reboot required</string>
+    <string name="reboot_required_message">A reboot is required to apply changes. Reboot now?</string>
+    <string name="action_later">Later</string>
+    <string name="action_reboot_now">Reboot now</string>
+
 </resources>
