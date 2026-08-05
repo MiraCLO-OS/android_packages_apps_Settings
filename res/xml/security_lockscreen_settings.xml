@@ -97,6 +97,17 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="secure_lockscreen_category"
+        android:title="@string/secure_lockscreen_category_title">
+
+        <co.aospa.framework.preference.SystemSettingSwitchPreference
+            android:key="lockscreen_enable_power_menu"
+            android:title="@string/lockscreen_enable_power_menu_title"
+            android:summary="@string/lockscreen_enable_power_menu_summary"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="ambient_display_category_when_to_show"
         android:title="@string/ambient_display_category_triggers"
         settings:controller="com.android.settings.display.AmbientDisplayWhenToShowPreferenceController"

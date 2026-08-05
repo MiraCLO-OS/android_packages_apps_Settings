@@ -152,4 +152,9 @@
     <string name="heads_up_notifications_enabled_title">Heads-up</string>
     <string name="heads_up_notifications_enabled_summary">Display priority notifications in a small floating window</string>
 
+    <!-- Power menu on secure lockscreen -->
+    <string name="secure_lockscreen_category_title">Secure lockscreen</string>
+    <string name="lockscreen_enable_power_menu_title">Power menu</string>
+    <string name="lockscreen_enable_power_menu_summary">Allow accessing power menu on secure lockscreen</string>
+
 </resources>
