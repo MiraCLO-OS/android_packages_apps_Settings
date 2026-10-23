@@ -25,6 +25,7 @@ import android.graphics.fonts.FontStyle
 import android.net.Uri
 import android.os.ParcelFileDescriptor
 import android.os.ServiceManager
+import android.provider.OpenableColumns
 import android.util.Log
 import android.widget.Toast
 import com.android.internal.statusbar.IStatusBarService
@@ -43,6 +44,8 @@ class ExternalFontInstaller(private val context: Context) {
         private const val CUSTOM_FONT_FILE = "cust_font.ttf"
         private const val TEMP_PREVIEW_FONT = "preview_font.ttf"
         private const val MAX_FONT_BYTES = 32L * 1024L * 1024L
+        private const val FONT_PREFERENCES = "custom_font_preferences"
+        private const val KEY_INSTALLED_FONT_NAME = "installed_font_name"
         const val DEFAULT_FONT_FAMILY = "sans-serif"
 
         fun rebootDevice() {
@@ -57,6 +60,27 @@ class ExternalFontInstaller(private val context: Context) {
     }
 
     private val fontManager: FontManager = context.getSystemService(FontManager::class.java)
+
+    val installedFontName: String?
+        get() = context.getSharedPreferences(FONT_PREFERENCES, Context.MODE_PRIVATE)
+            .getString(KEY_INSTALLED_FONT_NAME, null)
+
+    suspend fun getDisplayName(uri: Uri): String? = withContext(Dispatchers.IO) {
+        runCatching {
+            context.contentResolver.query(
+                uri,
+                arrayOf(OpenableColumns.DISPLAY_NAME),
+                null,
+                null,
+                null,
+            )?.use { cursor ->
+                if (cursor.moveToFirst()) cursor.getString(0) else null
+            }?.substringBeforeLast('.', missingDelimiterValue = "")
+                ?.takeIf { it.isNotBlank() }
+        }.onFailure {
+            Log.w(TAG, "Failed to read font display name", it)
+        }.getOrNull()
+    }
 
     suspend fun loadTypefaceFromUri(uri: Uri): Typeface? = withContext(Dispatchers.IO) {
         val tempFile = copyUriToCache(uri, TEMP_PREVIEW_FONT) ?: return@withContext null
@@ -73,7 +97,8 @@ class ExternalFontInstaller(private val context: Context) {
     }
 
     fun loadInstalledTypeface(): Typeface? = runCatching {
-        File(context.cacheDir, CUSTOM_FONT_FILE).takeIf { it.isFile }
+        (File(context.filesDir, CUSTOM_FONT_FILE).takeIf { it.isFile }
+            ?: File(context.cacheDir, CUSTOM_FONT_FILE).takeIf { it.isFile })
             ?.let { Typeface.createFromFile(it) }
     }.getOrNull()
 
@@ -89,13 +114,38 @@ class ExternalFontInstaller(private val context: Context) {
             return null
         }
 
-        if (!applyFontToSystem(fontFile, postScriptName)) {
+        if (!withContext(Dispatchers.IO) { applyFontToSystem(fontFile, postScriptName) }) {
             fontFile.delete()
+            showToast(R.string.toast_failed_apply_font)
             return null
         }
 
+        withContext(Dispatchers.IO) { persistInstalledFont(fontFile) }
+
+        val displayName = getDisplayName(uri)?.takeIf { it.isNotBlank() } ?: postScriptName
+        context.getSharedPreferences(FONT_PREFERENCES, Context.MODE_PRIVATE)
+            .edit()
+            .putString(KEY_INSTALLED_FONT_NAME, displayName)
+            .apply()
         cleanupPreviewFont()
-        return postScriptName
+        return displayName
+    }
+
+    suspend fun resetFontUpdates(): Boolean = withContext(Dispatchers.IO) {
+        runCatching {
+            // FontManager clears all updatable font changes. The UI immediately asks for a
+            // reboot so no process keeps using files that the service has removed.
+            fontManager.clearUpdates()
+            context.getSharedPreferences(FONT_PREFERENCES, Context.MODE_PRIVATE)
+                .edit()
+                .remove(KEY_INSTALLED_FONT_NAME)
+                .apply()
+            File(context.filesDir, CUSTOM_FONT_FILE).delete()
+            File(context.cacheDir, CUSTOM_FONT_FILE).delete()
+            true
+        }.onFailure {
+            Log.e(TAG, "Failed to reset system font", it)
+        }.getOrDefault(false)
     }
 
     private suspend fun copyUriToCache(uri: Uri, fileName: String): File? =
@@ -144,6 +194,30 @@ class ExternalFontInstaller(private val context: Context) {
             }
         }
 
+    private fun persistInstalledFont(source: File) {
+        val target = File(context.filesDir, CUSTOM_FONT_FILE)
+        val temp = File(context.filesDir, "$CUSTOM_FONT_FILE.tmp")
+        try {
+            FileInputStream(source).use { input ->
+                FileOutputStream(temp, false).use { output ->
+                    input.copyTo(output)
+                    output.fd.sync()
+                }
+            }
+            if (!temp.renameTo(target)) {
+                if (target.exists() && !target.delete()) {
+                    throw IllegalStateException("Could not replace saved font preview")
+                }
+                if (!temp.renameTo(target)) {
+                    throw IllegalStateException("Could not save installed font preview")
+                }
+            }
+        } catch (e: Exception) {
+            temp.delete()
+            Log.w(TAG, "Could not persist installed font preview", e)
+        }
+    }
+
     private fun extractPostScriptName(fontFile: File): String? = runCatching {
         if (!fontFile.isFile || fontFile.length() <= 0L || fontFile.length() > MAX_FONT_BYTES) {
             return@runCatching null
@@ -160,49 +234,55 @@ class ExternalFontInstaller(private val context: Context) {
 
     private fun applyFontToSystem(fontFile: File, postScriptName: String): Boolean {
         return runCatching {
-            val pfd = ParcelFileDescriptor.open(fontFile, ParcelFileDescriptor.MODE_READ_ONLY)
-            val fontFileUpdateRequest = FontFileUpdateRequest(pfd, ByteArray(0))
+            ParcelFileDescriptor.open(fontFile, ParcelFileDescriptor.MODE_READ_ONLY).use { pfd ->
+                val fontFileUpdateRequest = FontFileUpdateRequest(pfd, ByteArray(0))
+                val updateRequestBuilder = FontFamilyUpdateRequest.Builder()
+                    .addFontFileUpdateRequest(fontFileUpdateRequest)
 
-            val fontRegular = FontFamilyUpdateRequest.Font.Builder(
-                postScriptName,
-                FontStyle()
-            ).build()
+                activeFontFamilyNames().forEach { familyName ->
+                    val font = FontFamilyUpdateRequest.Font.Builder(
+                        postScriptName,
+                        FontStyle(),
+                    ).build()
+                    val family = FontFamilyUpdateRequest.FontFamily.Builder(
+                        familyName,
+                        listOf(font),
+                    ).build()
+                    updateRequestBuilder.addFontFamily(family)
+                }
 
-            val familyRegular = FontFamilyUpdateRequest.FontFamily.Builder(
-                DEFAULT_FONT_FAMILY,
-                listOf(fontRegular)
-            ).build()
-
-            val updateRequest = FontFamilyUpdateRequest.Builder()
-                .addFontFileUpdateRequest(fontFileUpdateRequest)
-                .addFontFamily(familyRegular)
-                .build()
-
-            val result = fontManager.updateFontFamily(
-                updateRequest,
-                fontManager.fontConfig.configVersion
-            )
-
-            if (result != FontManager.RESULT_SUCCESS) {
-                showToast(R.string.toast_failed_apply_font)
-                false
-            } else true
-        }.getOrElse {
+                fontManager.updateFontFamily(
+                    updateRequestBuilder.build(),
+                    fontManager.fontConfig.configVersion,
+                ) == FontManager.RESULT_SUCCESS
+            }
+        }.onFailure {
             Log.e(TAG, "Failed to update system font", it)
-            false
+        }.getOrDefault(false)
+    }
+
+    private fun activeFontFamilyNames(): Set<String> {
+        val names = linkedSetOf(DEFAULT_FONT_FAMILY)
+        val configFamilyIds = intArrayOf(
+            com.android.internal.R.string.config_bodyFontFamily,
+            com.android.internal.R.string.config_bodyFontFamilyMedium,
+            com.android.internal.R.string.config_headlineFontFamily,
+            com.android.internal.R.string.config_headlineFontFamilyMedium,
+        )
+        configFamilyIds.forEach { resourceId ->
+            runCatching { context.resources.getString(resourceId).trim() }
+                .getOrNull()
+                ?.takeIf { it.isNotEmpty() }
+                ?.let(names::add)
         }
+        return names
     }
 
     private fun showToast(resId: Int) {
         Toast.makeText(context, resId, Toast.LENGTH_SHORT).show()
     }
 
-    fun resetFontUpdates() {
-        fontManager.clearUpdates()
-        cleanupPreviewFont()
-    }
-
-    private fun cleanupPreviewFont() {
+    fun cleanupPreviewFont() {
         try {
             val previewFile = File(context.cacheDir, TEMP_PREVIEW_FONT)
             if (previewFile.exists()) previewFile.delete()

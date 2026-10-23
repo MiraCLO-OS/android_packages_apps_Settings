@@ -162,8 +162,18 @@
     <!-- Custom font -->
     <string name="custom_font_title">Custom font</string>
     <string name="custom_font_summary">Install a font file to use as the system font</string>
+    <string name="custom_font_applied_summary">Applied: %1$s</string>
+    <string name="custom_font_preview_selected">Previewing: %1$s</string>
+    <string name="custom_font_selected_file">Selected font</string>
+    <string name="custom_font_no_font_applied">No custom font is applied</string>
+    <string name="custom_font_preview_label">Preview</string>
+    <string name="custom_font_preview_sample">Aa Bb Cc 123</string>
+    <string name="custom_font_preview_body">The quick brown fox jumps over the lazy dog.</string>
+    <string name="custom_font_apply">Apply</string>
     <string name="add_font">Add font</string>
     <string name="reset_font">Reset</string>
+    <string name="reset_font_confirmation">Reset the system font and reboot now? The system font files are removed during reset.</string>
+    <string name="reset_font_and_reboot">Reset and reboot</string>
     <string name="toast_failed_apply_font">Failed to apply font</string>
     <string name="toast_invalid_font_file">Invalid font file</string>
     <string name="reboot_required_title">Reboot required</string>
