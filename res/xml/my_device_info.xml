@@ -50,6 +50,15 @@
             android:fragment="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionSettings"
             settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionPreferenceController"/>
 
+        <!-- MiraCLO version -->
+        <Preference
+            android:key="miraclo_version"
+            android:order="3"
+            android:title="MiraCLO version"
+            android:summary="@string/summary_placeholder"
+            settings:enableCopying="true"
+            settings:controller="com.android.settings.deviceinfo.MiraCLOVersionPreferenceController"/>
+
         <!-- Account name -->
         <Preference
             android:key="branded_account"
