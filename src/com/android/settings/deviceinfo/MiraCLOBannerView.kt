@@ -160,12 +160,13 @@ class MiraCLOBannerView @JvmOverloads constructor(
 
         // Glow under the finger.
         if (glowAlpha > 0.01f) {
-            val r = w * 0.5f
+            // Subtle: a faint light under the finger, never a flash.
+            val r = w * 0.38f
             val a = glowAlpha
             glow.shader = RadialGradient(touchX, touchY, r,
-                intArrayOf(Color.argb((140 * a).toInt(), 255, 255, 255),
-                    Color.argb((100 * a).toInt(), 160, 185, 255),
-                    Color.argb((45 * a).toInt(), 255, 160, 110), Color.TRANSPARENT),
+                intArrayOf(Color.argb((38 * a).toInt(), 255, 255, 255),
+                    Color.argb((28 * a).toInt(), 160, 185, 255),
+                    Color.argb((12 * a).toInt(), 255, 160, 110), Color.TRANSPARENT),
                 floatArrayOf(0f, 0.28f, 0.6f, 1f), Shader.TileMode.CLAMP)
             canvas.drawCircle(touchX, touchY, r, glow)
         }
