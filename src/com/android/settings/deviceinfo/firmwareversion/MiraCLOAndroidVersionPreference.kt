@@ -9,6 +9,7 @@ import android.content.Context
 import android.os.SystemProperties
 import androidx.preference.Preference
 import com.android.settings.R
+import com.android.settings.deviceinfo.MiraCLOVersionPreferenceController
 import com.android.settingslib.datastore.KeyValueStore
 import com.android.settingslib.metadata.PersistentPreference
 import com.android.settingslib.metadata.PreferenceMetadata
@@ -46,7 +47,10 @@ class MiraCLOAndroidVersionPreference :
     override fun storage(context: Context): KeyValueStore = createSummaryStorage(context, key)
 
     override fun getSummary(context: Context): CharSequence? =
-        SystemProperties.get(MIRACLO_VERSION_PROP).ifEmpty {
+        if (SystemProperties.get(MIRACLO_VERSION_PROP).isNotEmpty()) {
+            // Same text as Settings > About phone > MiraCLO version, e.g. "1.0 Beta 1 (Aurora)".
+            MiraCLOVersionPreferenceController.formatVersion()
+        } else {
             SystemProperties.get(AOSPA_VERSION_PROP, context.getString(R.string.device_info_default))
         }
 
