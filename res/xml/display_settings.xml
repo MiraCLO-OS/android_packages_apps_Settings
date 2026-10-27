@@ -87,11 +87,12 @@
             android:summary="@string/qs_tiles_circular_summary"
             android:defaultValue="false" />
 
-        <co.aospa.framework.preference.SecureSettingSwitchPreference
+        <co.aospa.framework.preference.SecureSettingListPreference
             android:key="miraclo_qs_style"
             android:title="@string/miraclo_qs_style_title"
-            android:summary="@string/miraclo_qs_style_summary"
-            android:defaultValue="false" />
+            android:entries="@array/miraclo_qs_style_entries"
+            android:entryValues="@array/miraclo_qs_style_values"
+            android:defaultValue="0" />
     </PreferenceCategory>
 
     <PreferenceCategory
