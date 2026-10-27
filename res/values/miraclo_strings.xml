@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: MiraCLO
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Quick Settings: ColorOS-style layout switch -->
+    <string name="miraclo_qs_style_title">MiraCLO Quick Settings style</string>
+    <string name="miraclo_qs_style_summary">Glass tiles and round icon tiles with labels, inspired by ColorOS</string>
+</resources>
