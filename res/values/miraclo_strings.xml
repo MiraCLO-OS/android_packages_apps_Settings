@@ -4,6 +4,9 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- About phone > Android version: replaces "Paranoid Android version" -->
+    <string name="miraclo_android_version_title">MiraCLO version</string>
+
     <!-- Quick Settings: layout style chooser (Settings > Display > Quick settings) -->
     <string name="miraclo_qs_style_title">QS style</string>
     <string name="miraclo_qs_style_default">Default</string>

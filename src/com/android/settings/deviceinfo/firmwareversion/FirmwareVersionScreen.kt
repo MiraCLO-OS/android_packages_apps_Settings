@@ -20,7 +20,6 @@ import android.app.settings.SettingsEnums
 import android.content.Context
 import android.os.Build
 import androidx.fragment.app.Fragment
-import co.aospa.settings.deviceinfo.firmwareversion.ParanoidAndroidVersionPreference
 import co.aospa.settings.deviceinfo.firmwareversion.ParanoidBasebandVersionPreference
 import com.android.settings.R
 import com.android.settings.Settings.FirmwareVersionActivity
@@ -73,7 +72,7 @@ open class FirmwareVersionScreen : PreferenceScreenMixin, PreferenceSummaryProvi
     override fun getPreferenceHierarchy(context: Context, coroutineScope: CoroutineScope) =
         preferenceHierarchy(context) {
             +FirmwareVersionDetailPreference()
-            +ParanoidAndroidVersionPreference()
+            +MiraCLOAndroidVersionPreference()
             +SecurityPatchLevelPreference()
             +MainlineModuleVersionPreference()
             +ParanoidBasebandVersionPreference()
