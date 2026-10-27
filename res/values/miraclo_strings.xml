@@ -22,4 +22,13 @@
         <item>0</item>
         <item>1</item>
     </string-array>
+
+    <!-- Settings > Notifications > Dynamic Island -->
+    <string name="miraclo_island_title">Dynamic Island</string>
+    <string name="miraclo_island_entry_summary">Live activity around the front camera</string>
+    <string name="miraclo_island_intro">Shows live activity around the front camera. Tap it to expand, long-press to open the app.</string>
+    <string name="miraclo_island_enable_title">Use Dynamic Island</string>
+    <string name="miraclo_island_sources_title">Show in island</string>
+    <string name="miraclo_island_media_title">Media</string>
+    <string name="miraclo_island_media_summary">Music, podcasts and video playback</string>
 </resources>

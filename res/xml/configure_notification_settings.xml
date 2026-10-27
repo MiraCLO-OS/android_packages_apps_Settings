@@ -43,6 +43,13 @@
                 android:targetPackage="com.android.settings"
                 android:targetClass="com.android.settings.notification.history.NotificationHistoryActivity" />
         </Preference>
+        <!-- MiraCLO: Dynamic Island -->
+        <Preference
+            android:key="miraclo_island"
+            android:order="3"
+            android:title="@string/miraclo_island_title"
+            android:summary="@string/miraclo_island_entry_summary"
+            android:fragment="com.android.settings.notification.MiraCLOIslandSettings" />
 
         <Preference
             android:fragment="com.android.settings.notification.SummarizationPreferenceFragment"

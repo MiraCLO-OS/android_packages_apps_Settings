@@ -27,6 +27,12 @@
         android:selectable="false"
         settings:isPreferenceVisible="false"/>
 
+    <!-- MiraCLO: ROM banner (MiraCLOBannerView) -->
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="miraclo_about_banner"
+        android:layout="@layout/miraclo_about_banner"
+        android:selectable="false"/>
+
     <PreferenceCategory
         android:key="basic_info_category"
         android:selectable="false"
