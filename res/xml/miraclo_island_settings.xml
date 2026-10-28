@@ -10,10 +10,6 @@
     android:key="miraclo_island_settings"
     android:title="@string/miraclo_island_title">
 
-    <com.android.settingslib.widget.TopIntroPreference
-        android:key="miraclo_island_intro"
-        android:title="@string/miraclo_island_intro" />
-
     <co.aospa.framework.preference.SecureSettingSwitchPreference
         android:key="miraclo_island_enabled"
         android:title="@string/miraclo_island_enable_title"
@@ -28,6 +24,60 @@
             android:dependency="miraclo_island_enabled"
             android:title="@string/miraclo_island_media_title"
             android:summary="@string/miraclo_island_media_summary"
+            android:defaultValue="true" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_island_calls"
+            android:dependency="miraclo_island_enabled"
+            android:title="@string/miraclo_island_calls_title"
+            android:summary="@string/miraclo_island_calls_summary"
+            android:defaultValue="true" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_island_timers"
+            android:dependency="miraclo_island_enabled"
+            android:title="@string/miraclo_island_timers_title"
+            android:summary="@string/miraclo_island_timers_summary"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="miraclo_island_behaviour"
+        android:title="@string/miraclo_island_behaviour_title">
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_island_hide_while_open"
+            android:dependency="miraclo_island_enabled"
+            android:title="@string/miraclo_island_hide_while_open_title"
+            android:summary="@string/miraclo_island_hide_while_open_summary"
+            android:defaultValue="true" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_island_several"
+            android:dependency="miraclo_island_enabled"
+            android:title="@string/miraclo_island_several_title"
+            android:summary="@string/miraclo_island_several_summary"
+            android:defaultValue="true" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_island_touch_glow"
+            android:dependency="miraclo_island_enabled"
+            android:title="@string/miraclo_island_touch_glow_title"
+            android:summary="@string/miraclo_island_touch_glow_summary"
+            android:defaultValue="true" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_island_ambient_glow"
+            android:dependency="miraclo_island_enabled"
+            android:title="@string/miraclo_island_ambient_glow_title"
+            android:summary="@string/miraclo_island_ambient_glow_summary"
+            android:defaultValue="true" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_island_haptics"
+            android:dependency="miraclo_island_enabled"
+            android:title="@string/miraclo_island_haptics_title"
+            android:summary="@string/miraclo_island_haptics_summary"
             android:defaultValue="true" />
     </PreferenceCategory>
 </PreferenceScreen>
