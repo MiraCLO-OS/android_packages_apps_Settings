@@ -45,4 +45,7 @@
     <string name="miraclo_island_ambient_glow_summary">Colours from the album art or activity around the card</string>
     <string name="miraclo_island_haptics_title">Haptic feedback</string>
     <string name="miraclo_island_haptics_summary">A very light tap on open and snap back</string>
+    <string name="miraclo_island_paused_timeout_title">Hide paused music</string>
+    <string name="miraclo_island_paused_timeout_summary">After 10 minutes paused. It comes back when you play</string>
+    <string name="miraclo_island_footer">The island never shows on the lock screen or in full-screen apps.</string>
 </resources>

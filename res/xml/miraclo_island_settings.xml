@@ -7,13 +7,21 @@
      SystemUI's MiraCLOIslandController. -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:key="miraclo_island_settings"
     android:title="@string/miraclo_island_title">
 
-    <co.aospa.framework.preference.SecureSettingSwitchPreference
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="miraclo_island_hero"
+        android:layout="@layout/miraclo_island_hero"
+        android:selectable="false"
+        settings:searchable="false" />
+
+    <com.android.settingslib.widget.MainSwitchPreference
         android:key="miraclo_island_enabled"
         android:title="@string/miraclo_island_enable_title"
-        android:defaultValue="false" />
+        android:persistent="false"
+        settings:controller="com.android.settings.notification.MiraCLOIslandMainSwitchPreferenceController" />
 
     <PreferenceCategory
         android:key="miraclo_island_sources"
@@ -60,6 +68,13 @@
             android:defaultValue="true" />
 
         <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_island_paused_timeout"
+            android:dependency="miraclo_island_enabled"
+            android:title="@string/miraclo_island_paused_timeout_title"
+            android:summary="@string/miraclo_island_paused_timeout_summary"
+            android:defaultValue="true" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
             android:key="miraclo_island_touch_glow"
             android:dependency="miraclo_island_enabled"
             android:title="@string/miraclo_island_touch_glow_title"
@@ -80,4 +95,10 @@
             android:summary="@string/miraclo_island_haptics_summary"
             android:defaultValue="true" />
     </PreferenceCategory>
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="miraclo_island_footer"
+        android:title="@string/miraclo_island_footer"
+        android:selectable="false"
+        settings:searchable="false" />
 </PreferenceScreen>
