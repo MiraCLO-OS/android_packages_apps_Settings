@@ -26,7 +26,7 @@
     <!-- Settings > Notifications > Dynamic Island -->
     <string name="miraclo_island_title">Dynamic Island</string>
     <string name="miraclo_island_entry_summary">Live activity around the front camera</string>
-    <string name="miraclo_island_intro">Shows live activity around the front camera. Tap it to expand, long-press to open the app.</string>
+    <string name="miraclo_island_intro">Shows what is playing around the front camera while the app is minimised. Tap the pill to expand it and pull it down to open the app. Swipe it sideways to hide it until the next song. In the expanded view, tap to open the app and swipe up to shrink it back.</string>
     <string name="miraclo_island_enable_title">Use Dynamic Island</string>
     <string name="miraclo_island_sources_title">Show in island</string>
     <string name="miraclo_island_media_title">Media</string>
