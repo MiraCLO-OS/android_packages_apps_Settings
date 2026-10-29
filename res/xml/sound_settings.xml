@@ -164,6 +164,14 @@
         android:title="@string/sound_audio_category_title">
         <!-- Live Caption -110 and Now Playing -105-->
 
+        <!-- MiraCLO: One UI style volume panel (read by SystemUI) -->
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_volume_panel"
+            android:title="@string/miraclo_volume_panel_title"
+            android:summary="@string/miraclo_volume_panel_summary"
+            android:defaultValue="true"
+            android:order="-114"/>
+
         <co.aospa.framework.preference.SystemSettingSwitchPreference
             android:key="show_app_volume"
             android:title="@string/app_volume_title"
