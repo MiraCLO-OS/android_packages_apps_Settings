@@ -93,6 +93,13 @@
             android:entries="@array/miraclo_qs_style_entries"
             android:entryValues="@array/miraclo_qs_style_values"
             android:defaultValue="0" />
+
+        <!-- MiraCLO: Liquid Glass for SystemUI and the launcher (Settings.Secure, read by both) -->
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_liquid_glass"
+            android:title="@string/miraclo_liquid_glass_title"
+            android:summary="@string/miraclo_liquid_glass_summary"
+            android:defaultValue="false" />
     </PreferenceCategory>
 
     <PreferenceCategory

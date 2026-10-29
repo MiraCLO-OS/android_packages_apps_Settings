@@ -47,5 +47,23 @@
     <string name="miraclo_island_haptics_summary">A very light tap on open and snap back</string>
     <string name="miraclo_island_paused_timeout_title">Hide paused music</string>
     <string name="miraclo_island_paused_timeout_summary">After 10 minutes paused. It comes back when you play</string>
+    <string name="miraclo_island_screen_record_title">Screen recording</string>
+    <string name="miraclo_island_screen_record_summary">Countdown, time and Stop</string>
+    <string name="miraclo_island_live_title">Live updates</string>
+    <string name="miraclo_island_live_summary">Navigation, rides and deliveries from apps that support Android live updates</string>
+    <string name="miraclo_island_progress_title">Downloads &amp; transfers</string>
+    <string name="miraclo_island_progress_summary">Progress for downloads, Quick Share and recordings</string>
+    <string name="miraclo_island_charging_title">Charging</string>
+    <string name="miraclo_island_charging_summary">Battery level when you plug in</string>
+    <string name="miraclo_island_earbuds_title">Earbuds</string>
+    <string name="miraclo_island_earbuds_summary">Battery when they connect</string>
+    <string name="miraclo_island_ringer_title">Ringer mode</string>
+    <string name="miraclo_island_ringer_summary">Ring, vibrate or silent when changed</string>
+    <string name="miraclo_island_low_battery_title">Low battery</string>
+    <string name="miraclo_island_low_battery_summary">Reminder at 20% and 10%, with Battery saver</string>
+    <string name="miraclo_island_glass_title">Liquid Glass cards</string>
+    <string name="miraclo_island_glass_summary">Clear glass with a bright edge instead of frosted glass</string>
+    <string name="miraclo_liquid_glass_title">Liquid Glass</string>
+    <string name="miraclo_liquid_glass_summary">Clear glass for quick settings, notifications, volume, the power menu and the launcher</string>
     <string name="miraclo_island_footer">The island never shows on the lock screen or in full-screen apps.</string>
 </resources>

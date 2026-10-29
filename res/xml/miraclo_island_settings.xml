@@ -47,6 +47,55 @@
             android:title="@string/miraclo_island_timers_title"
             android:summary="@string/miraclo_island_timers_summary"
             android:defaultValue="true" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_island_screen_record"
+            android:dependency="miraclo_island_enabled"
+            android:title="@string/miraclo_island_screen_record_title"
+            android:summary="@string/miraclo_island_screen_record_summary"
+            android:defaultValue="true" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_island_live_updates"
+            android:dependency="miraclo_island_enabled"
+            android:title="@string/miraclo_island_live_title"
+            android:summary="@string/miraclo_island_live_summary"
+            android:defaultValue="true" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_island_progress"
+            android:dependency="miraclo_island_enabled"
+            android:title="@string/miraclo_island_progress_title"
+            android:summary="@string/miraclo_island_progress_summary"
+            android:defaultValue="true" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_island_charging"
+            android:dependency="miraclo_island_enabled"
+            android:title="@string/miraclo_island_charging_title"
+            android:summary="@string/miraclo_island_charging_summary"
+            android:defaultValue="true" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_island_earbuds"
+            android:dependency="miraclo_island_enabled"
+            android:title="@string/miraclo_island_earbuds_title"
+            android:summary="@string/miraclo_island_earbuds_summary"
+            android:defaultValue="true" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_island_ringer"
+            android:dependency="miraclo_island_enabled"
+            android:title="@string/miraclo_island_ringer_title"
+            android:summary="@string/miraclo_island_ringer_summary"
+            android:defaultValue="true" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_island_low_battery"
+            android:dependency="miraclo_island_enabled"
+            android:title="@string/miraclo_island_low_battery_title"
+            android:summary="@string/miraclo_island_low_battery_summary"
+            android:defaultValue="true" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -73,6 +122,13 @@
             android:title="@string/miraclo_island_paused_timeout_title"
             android:summary="@string/miraclo_island_paused_timeout_summary"
             android:defaultValue="true" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_island_glass"
+            android:dependency="miraclo_island_enabled"
+            android:title="@string/miraclo_island_glass_title"
+            android:summary="@string/miraclo_island_glass_summary"
+            android:defaultValue="false" />
 
         <co.aospa.framework.preference.SecureSettingSwitchPreference
             android:key="miraclo_island_touch_glow"
