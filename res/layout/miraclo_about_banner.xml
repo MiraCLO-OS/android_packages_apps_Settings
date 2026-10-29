@@ -3,21 +3,15 @@
      SPDX-FileCopyrightText: MiraCLO
      SPDX-License-Identifier: Apache-2.0
 -->
-<!-- MiraCLO: banner at the top of Settings > About phone. -->
+<!-- MiraCLO: the top of Settings > About phone (MiraCLOAboutHeroView). -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:clipChildren="false"
-    android:clipToPadding="false"
-    android:paddingStart="16dp"
-    android:paddingEnd="16dp"
-    android:paddingTop="8dp"
-    android:paddingBottom="20dp">
+    android:layout_height="wrap_content">
 
-    <com.android.settings.deviceinfo.MiraCLOBannerView
-        android:id="@+id/miraclo_banner"
+    <com.android.settings.deviceinfo.MiraCLOAboutHeroView
+        android:id="@+id/miraclo_about_hero"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="wrap_content"
         android:importantForAccessibility="yes"
         android:focusable="true" />
 </FrameLayout>

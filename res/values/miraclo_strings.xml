@@ -65,5 +65,17 @@
     <string name="miraclo_island_glass_summary">Clear glass with a bright edge instead of frosted glass</string>
     <string name="miraclo_liquid_glass_title">Liquid Glass</string>
     <string name="miraclo_liquid_glass_summary">Clear glass for quick settings, notifications, volume and the power menu</string>
+    <string name="miraclo_volume_panel_title">MiraCLO volume panel</string>
+    <string name="miraclo_volume_panel_summary">Slim panel at the edge that opens to every volume. Turn off for the Android one</string>
+    <!-- About phone -->
+    <string name="miraclo_about_device">Device</string>
+    <string name="miraclo_about_android">Android</string>
+    <string name="miraclo_about_kernel">Kernel</string>
+    <string name="miraclo_about_build">Build</string>
+    <string name="miraclo_about_patch">Patch <xliff:g id="date" example="1 Oct 2026">%s</xliff:g></string>
+    <string name="miraclo_about_maintainer_title">Maintainer</string>
+    <string name="miraclo_maintainer_name" translatable="false">PSP</string>
+    <string name="miraclo_about_source_title">Source code</string>
+    <string name="miraclo_about_source_summary" translatable="false">github.com/MiraCLO-OS</string>
     <string name="miraclo_island_footer">The island never shows on the lock screen or in full-screen apps.</string>
 </resources>

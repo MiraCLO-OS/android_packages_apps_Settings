@@ -27,11 +27,36 @@
         android:selectable="false"
         settings:isPreferenceVisible="false"/>
 
-    <!-- MiraCLO: ROM banner (MiraCLOBannerView) -->
+    <!-- MiraCLO: About hero (MiraCLOAboutHeroView) -->
     <com.android.settingslib.widget.LayoutPreference
         android:key="miraclo_about_banner"
         android:layout="@layout/miraclo_about_banner"
         android:selectable="false"/>
+
+    <!-- MiraCLO: maintainer and source -->
+    <PreferenceCategory
+        android:key="miraclo_maintainer_category"
+        android:title="@string/miraclo_about_maintainer_title">
+
+        <Preference
+            android:key="miraclo_maintainer"
+            android:title="@string/miraclo_maintainer_name"
+            android:selectable="false"
+            settings:searchable="false"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="miraclo_links_category">
+
+        <Preference
+            android:key="miraclo_source"
+            android:title="@string/miraclo_about_source_title"
+            android:summary="@string/miraclo_about_source_summary"
+            settings:searchable="false">
+            <intent android:action="android.intent.action.VIEW"
+                    android:data="https://github.com/MiraCLO-OS" />
+        </Preference>
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="basic_info_category"
