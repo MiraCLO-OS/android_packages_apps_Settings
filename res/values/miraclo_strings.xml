@@ -64,6 +64,6 @@
     <string name="miraclo_island_glass_title">Liquid Glass cards</string>
     <string name="miraclo_island_glass_summary">Clear glass with a bright edge instead of frosted glass</string>
     <string name="miraclo_liquid_glass_title">Liquid Glass</string>
-    <string name="miraclo_liquid_glass_summary">Clear glass for quick settings, notifications, volume, the power menu and the launcher</string>
+    <string name="miraclo_liquid_glass_summary">Clear glass for quick settings, notifications, volume and the power menu</string>
     <string name="miraclo_island_footer">The island never shows on the lock screen or in full-screen apps.</string>
 </resources>
