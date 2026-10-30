@@ -61,10 +61,23 @@
     <string name="miraclo_island_ringer_summary">Ring, vibrate or silent when changed</string>
     <string name="miraclo_island_low_battery_title">Low battery</string>
     <string name="miraclo_island_low_battery_summary">Reminder at 20% and 10%, with Battery saver</string>
-    <string name="miraclo_island_glass_title">Liquid Glass cards</string>
-    <string name="miraclo_island_glass_summary">Clear glass with a bright edge instead of frosted glass</string>
     <string name="miraclo_liquid_glass_title">Liquid Glass</string>
-    <string name="miraclo_liquid_glass_summary">Clear glass for quick settings, notifications, volume and the power menu</string>
+    <string name="miraclo_liquid_glass_summary">Choose where to use clear glass</string>
+    <string name="miraclo_liquid_glass_main_title">Use Liquid Glass</string>
+    <string name="miraclo_liquid_glass_places_title">Use it for</string>
+    <string name="miraclo_lg_qs_title">Quick Settings</string>
+    <string name="miraclo_lg_qs_summary">Tiles, sliders and the music card</string>
+    <string name="miraclo_lg_notifications_title">Notifications</string>
+    <string name="miraclo_lg_notifications_summary">Cards in the notification shade</string>
+    <string name="miraclo_lg_island_title">Dynamic Island cards</string>
+    <string name="miraclo_lg_island_summary">The island when it opens</string>
+    <string name="miraclo_lg_island_pills_title">Dynamic Island pills</string>
+    <string name="miraclo_lg_island_pills_summary">The small pills and bubbles at the top</string>
+    <string name="miraclo_lg_volume_title">Volume panel</string>
+    <string name="miraclo_lg_volume_summary">The MiraCLO volume panel</string>
+    <string name="miraclo_lg_power_title">Power menu</string>
+    <string name="miraclo_lg_power_summary">The menu from the power button</string>
+    <string name="miraclo_liquid_glass_footer">Liquid Glass shows what is behind with a light edge. The lock screen and notifications over apps always stay solid so they are easy to read.</string>
     <string name="miraclo_volume_panel_title">MiraCLO volume panel</string>
     <string name="miraclo_volume_panel_summary">Slim panel at the edge that opens to every volume. Turn off for the Android one</string>
     <!-- About phone -->
@@ -75,6 +88,8 @@
     <string name="miraclo_about_patch">Patch <xliff:g id="date" example="1 Oct 2026">%s</xliff:g></string>
     <string name="miraclo_about_maintainer_title">Maintainer</string>
     <string name="miraclo_maintainer_name" translatable="false">PSP</string>
+    <string name="miraclo_about_update">Update</string>
+    <string name="miraclo_about_no_updates">Updates will appear here in a later build</string>
     <string name="miraclo_about_source_title">Source code</string>
     <string name="miraclo_about_source_summary" translatable="false">github.com/MiraCLO-OS</string>
     <string name="miraclo_island_footer">The island never shows on the lock screen or in full-screen apps.</string>

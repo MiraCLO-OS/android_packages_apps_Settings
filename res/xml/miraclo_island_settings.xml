@@ -124,13 +124,6 @@
             android:defaultValue="true" />
 
         <co.aospa.framework.preference.SecureSettingSwitchPreference
-            android:key="miraclo_island_glass"
-            android:dependency="miraclo_island_enabled"
-            android:title="@string/miraclo_island_glass_title"
-            android:summary="@string/miraclo_island_glass_summary"
-            android:defaultValue="false" />
-
-        <co.aospa.framework.preference.SecureSettingSwitchPreference
             android:key="miraclo_island_touch_glow"
             android:dependency="miraclo_island_enabled"
             android:title="@string/miraclo_island_touch_glow_title"

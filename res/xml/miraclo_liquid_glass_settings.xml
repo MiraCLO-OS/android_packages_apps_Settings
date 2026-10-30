@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: MiraCLO
+     SPDX-License-Identifier: Apache-2.0
+-->
+<!-- MiraCLO: Settings > Display > Liquid Glass. Keys are Settings.Secure values read by
+     SystemUI (MiraCLOLiquidGlass, the quick settings and the Dynamic Island). A place is glass
+     when the main switch and its own switch are both on. -->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:key="miraclo_liquid_glass_settings"
+    android:title="@string/miraclo_liquid_glass_title">
+
+    <com.android.settingslib.widget.MainSwitchPreference
+        android:key="miraclo_liquid_glass"
+        android:title="@string/miraclo_liquid_glass_main_title"
+        android:persistent="false"
+        settings:controller="com.android.settings.display.MiraCLOLiquidGlassMainSwitchPreferenceController" />
+
+    <PreferenceCategory
+        android:key="miraclo_lg_places"
+        android:title="@string/miraclo_liquid_glass_places_title">
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_lg_qs"
+            android:dependency="miraclo_liquid_glass"
+            android:title="@string/miraclo_lg_qs_title"
+            android:summary="@string/miraclo_lg_qs_summary"
+            android:defaultValue="true" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_lg_notifications"
+            android:dependency="miraclo_liquid_glass"
+            android:title="@string/miraclo_lg_notifications_title"
+            android:summary="@string/miraclo_lg_notifications_summary"
+            android:defaultValue="true" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_lg_island"
+            android:dependency="miraclo_liquid_glass"
+            android:title="@string/miraclo_lg_island_title"
+            android:summary="@string/miraclo_lg_island_summary"
+            android:defaultValue="true" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_lg_island_pills"
+            android:dependency="miraclo_liquid_glass"
+            android:title="@string/miraclo_lg_island_pills_title"
+            android:summary="@string/miraclo_lg_island_pills_summary"
+            android:defaultValue="true" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_lg_volume"
+            android:dependency="miraclo_liquid_glass"
+            android:title="@string/miraclo_lg_volume_title"
+            android:summary="@string/miraclo_lg_volume_summary"
+            android:defaultValue="true" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_lg_power"
+            android:dependency="miraclo_liquid_glass"
+            android:title="@string/miraclo_lg_power_title"
+            android:summary="@string/miraclo_lg_power_summary"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="miraclo_liquid_glass_footer"
+        android:title="@string/miraclo_liquid_glass_footer"
+        android:selectable="false"
+        settings:searchable="false" />
+</PreferenceScreen>
