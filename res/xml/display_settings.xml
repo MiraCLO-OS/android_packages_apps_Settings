@@ -94,19 +94,20 @@
             android:entryValues="@array/miraclo_qs_style_values"
             android:defaultValue="0" />
 
-        <!-- MiraCLO: split shade, left side for notifications, right side for Quick Settings -->
+        <!-- MiraCLO: Android 17 Dual Shade, left side for notifications, right side for Quick
+             Settings (Settings.Secure.DUAL_SHADE, read by SystemUI) -->
         <co.aospa.framework.preference.SecureSettingSwitchPreference
-            android:key="miraclo_split_shade"
+            android:key="dual_shade"
             android:title="@string/miraclo_split_shade_title"
             android:summary="@string/miraclo_split_shade_summary"
             android:defaultValue="false" />
 
+        <!-- MiraCLO: chip backgrounds behind the clock and icons at the top of the shade -->
         <co.aospa.framework.preference.SecureSettingSwitchPreference
-            android:key="miraclo_split_shade_swap"
-            android:dependency="miraclo_split_shade"
-            android:title="@string/miraclo_split_shade_swap_title"
-            android:summary="@string/miraclo_split_shade_swap_summary"
-            android:defaultValue="false" />
+            android:key="miraclo_shade_header_chips"
+            android:title="@string/miraclo_shade_chips_title"
+            android:summary="@string/miraclo_shade_chips_summary"
+            android:defaultValue="true" />
 
         <!-- MiraCLO: Liquid Glass, a page to choose where SystemUI uses it -->
         <Preference
