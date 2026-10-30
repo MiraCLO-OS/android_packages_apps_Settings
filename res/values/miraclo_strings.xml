@@ -79,7 +79,9 @@
     <string name="miraclo_lg_power_summary">Power button menu</string>
     <string name="miraclo_lg_look_title">Look</string>
     <string name="miraclo_lg_refraction_title">Refraction (experimental)</string>
-    <string name="miraclo_lg_refraction_summary">Bends what\'s behind the glass at its edges. Quick Settings for now</string>
+    <string name="miraclo_lg_refraction_summary">Bends what\'s behind the glass at its edges. Quick Settings and the island, always dark</string>
+    <string name="miraclo_lg_glow_title">Glow</string>
+    <string name="miraclo_lg_glow_summary">A soft light under your finger in Quick Settings and the island, and on the music card</string>
     <string name="miraclo_split_shade_title">Split shade</string>
     <string name="miraclo_split_shade_summary">Swipe down on the left for notifications, on the right for Quick Settings</string>
     <string name="miraclo_split_shade_swap_title">Swap sides</string>

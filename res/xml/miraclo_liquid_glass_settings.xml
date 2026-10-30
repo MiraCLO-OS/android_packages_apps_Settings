@@ -28,6 +28,13 @@
             android:title="@string/miraclo_lg_refraction_title"
             android:summary="@string/miraclo_lg_refraction_summary"
             android:defaultValue="false" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_lg_glow"
+            android:dependency="miraclo_liquid_glass"
+            android:title="@string/miraclo_lg_glow_title"
+            android:summary="@string/miraclo_lg_glow_summary"
+            android:defaultValue="false" />
     </PreferenceCategory>
 
     <PreferenceCategory
