@@ -80,7 +80,7 @@
             android:key="miraclo_version"
             android:layout="@layout/miraclo_about_row"
             android:order="3"
-            android:title="MiraCLO version"
+            android:title="@string/miraclo_android_version_title"
             android:summary="@string/summary_placeholder"
             settings:enableCopying="true"
             settings:controller="com.android.settings.deviceinfo.MiraCLOVersionPreferenceController"/>

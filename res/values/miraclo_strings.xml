@@ -8,7 +8,7 @@
     <string name="miraclo_android_version_title">MiraCLO version</string>
 
     <!-- Quick Settings: layout style chooser (Settings > Display > Quick settings) -->
-    <string name="miraclo_qs_style_title">QS style</string>
+    <string name="miraclo_qs_style_title">Quick Settings style</string>
     <string name="miraclo_qs_style_default">Default</string>
     <string name="miraclo_qs_style_coloros">ColorOS</string>
 
@@ -25,72 +25,65 @@
 
     <!-- Settings > Notifications > Dynamic Island -->
     <string name="miraclo_island_title">Dynamic Island</string>
-    <string name="miraclo_island_entry_summary">Live activity around the front camera</string>
+    <string name="miraclo_island_entry_summary">Live activities around the camera</string>
     <string name="miraclo_island_enable_title">Use Dynamic Island</string>
-    <string name="miraclo_island_sources_title">Show in island</string>
+    <string name="miraclo_island_sources_title">Activities</string>
     <string name="miraclo_island_media_title">Media</string>
-    <string name="miraclo_island_media_summary">Music, podcasts and video playback</string>
+    <string name="miraclo_island_media_summary">Music and video</string>
     <string name="miraclo_island_calls_title">Calls</string>
-    <string name="miraclo_island_calls_summary">Ongoing calls</string>
+    <string name="miraclo_island_calls_summary">Incoming and ongoing calls</string>
     <string name="miraclo_island_timers_title">Timers &amp; stopwatch</string>
-    <string name="miraclo_island_timers_summary">From Clock</string>
+    <string name="miraclo_island_timers_summary">From the Clock app</string>
     <string name="miraclo_island_behaviour_title">Behaviour</string>
-    <string name="miraclo_island_hide_while_open_title">Hide while the app is open</string>
+    <string name="miraclo_island_hide_while_open_title">Hide in the app</string>
     <string name="miraclo_island_hide_while_open_summary">Show only after you leave the app</string>
-    <string name="miraclo_island_several_title">Several activities</string>
-    <string name="miraclo_island_several_summary">Up to 3 at once, beside the camera</string>
-    <string name="miraclo_island_touch_glow_title">Glow on touch</string>
-    <string name="miraclo_island_touch_glow_summary">Soft light under your finger</string>
+    <string name="miraclo_island_several_title">Multiple activities</string>
+    <string name="miraclo_island_several_summary">Show up to 3 at once</string>
+    <string name="miraclo_island_touch_glow_title">Touch glow</string>
+    <string name="miraclo_island_touch_glow_summary">Soft glow under your finger</string>
     <string name="miraclo_island_ambient_glow_title">Ambient glow</string>
-    <string name="miraclo_island_ambient_glow_summary">Colours from the album art or activity around the card</string>
-    <string name="miraclo_island_haptics_title">Haptic feedback</string>
-    <string name="miraclo_island_haptics_summary">A very light tap on open and snap back</string>
+    <string name="miraclo_island_ambient_glow_summary">Glow in the album or app colour</string>
+    <string name="miraclo_island_haptics_title">Haptics</string>
+    <string name="miraclo_island_haptics_summary">Light tap when it opens and closes</string>
     <string name="miraclo_island_paused_timeout_title">Hide paused music</string>
-    <string name="miraclo_island_paused_timeout_summary">After 10 minutes paused. It comes back when you play</string>
+    <string name="miraclo_island_paused_timeout_summary">After 10 minutes paused</string>
     <string name="miraclo_island_screen_record_title">Screen recording</string>
-    <string name="miraclo_island_screen_record_summary">Countdown, time and Stop</string>
+    <string name="miraclo_island_screen_record_summary">Countdown, timer and Stop</string>
     <string name="miraclo_island_live_title">Live updates</string>
-    <string name="miraclo_island_live_summary">Navigation, rides and deliveries from apps that support Android live updates</string>
+    <string name="miraclo_island_live_summary">Navigation, rides and deliveries</string>
     <string name="miraclo_island_progress_title">Downloads &amp; transfers</string>
-    <string name="miraclo_island_progress_summary">Progress for downloads, Quick Share and recordings</string>
+    <string name="miraclo_island_progress_summary">Downloads, Quick Share and recordings</string>
     <string name="miraclo_island_charging_title">Charging</string>
-    <string name="miraclo_island_charging_summary">Battery level when you plug in</string>
+    <string name="miraclo_island_charging_summary">Battery level when plugged in</string>
     <string name="miraclo_island_earbuds_title">Earbuds</string>
-    <string name="miraclo_island_earbuds_summary">Battery when they connect</string>
+    <string name="miraclo_island_earbuds_summary">Battery level when connected</string>
     <string name="miraclo_island_ringer_title">Ringer mode</string>
-    <string name="miraclo_island_ringer_summary">Ring, vibrate or silent when changed</string>
+    <string name="miraclo_island_ringer_summary">Ring, vibrate or silent</string>
     <string name="miraclo_island_low_battery_title">Low battery</string>
-    <string name="miraclo_island_low_battery_summary">Reminder at 20% and 10%, with Battery saver</string>
+    <string name="miraclo_island_low_battery_summary">Alerts at 20% and 10%</string>
     <string name="miraclo_liquid_glass_title">Liquid Glass</string>
-    <string name="miraclo_liquid_glass_summary">Choose where to use clear glass</string>
+    <string name="miraclo_liquid_glass_summary">Choose where glass is used</string>
     <string name="miraclo_liquid_glass_main_title">Use Liquid Glass</string>
-    <string name="miraclo_liquid_glass_places_title">Use it for</string>
+    <string name="miraclo_liquid_glass_places_title">Apply to</string>
     <string name="miraclo_lg_qs_title">Quick Settings</string>
-    <string name="miraclo_lg_qs_summary">Tiles, sliders and the music card</string>
+    <string name="miraclo_lg_qs_summary">Tiles, sliders and music card</string>
     <string name="miraclo_lg_notifications_title">Notifications</string>
-    <string name="miraclo_lg_notifications_summary">Cards in the notification shade</string>
-    <string name="miraclo_lg_island_title">Dynamic Island cards</string>
-    <string name="miraclo_lg_island_summary">The island when it opens</string>
-    <string name="miraclo_lg_island_pills_title">Dynamic Island pills</string>
-    <string name="miraclo_lg_island_pills_summary">The small pills and bubbles at the top</string>
+    <string name="miraclo_lg_notifications_summary">Notification cards in the shade</string>
+    <string name="miraclo_lg_island_title">Island cards</string>
+    <string name="miraclo_lg_island_summary">Expanded island cards</string>
+    <string name="miraclo_lg_island_pills_title">Island pills</string>
+    <string name="miraclo_lg_island_pills_summary">Small pills beside the camera</string>
     <string name="miraclo_lg_volume_title">Volume panel</string>
-    <string name="miraclo_lg_volume_summary">The MiraCLO volume panel</string>
+    <string name="miraclo_lg_volume_summary">MiraCLO volume panel</string>
     <string name="miraclo_lg_power_title">Power menu</string>
-    <string name="miraclo_lg_power_summary">The menu from the power button</string>
-    <string name="miraclo_liquid_glass_footer">Liquid Glass shows what is behind with a light edge. The lock screen and notifications over apps always stay solid so they are easy to read.</string>
+    <string name="miraclo_lg_power_summary">Power button menu</string>
+    <string name="miraclo_liquid_glass_footer">The lock screen and pop-up notifications stay solid for readability.</string>
     <string name="miraclo_volume_panel_title">MiraCLO volume panel</string>
-    <string name="miraclo_volume_panel_summary">Slim panel at the edge that opens to every volume. Turn off for the Android one</string>
+    <string name="miraclo_volume_panel_summary">Compact edge panel. Turn off for the Android panel</string>
     <!-- About phone -->
-    <string name="miraclo_about_device">Device</string>
-    <string name="miraclo_about_android">Android</string>
-    <string name="miraclo_about_kernel">Kernel</string>
-    <string name="miraclo_about_build">Build</string>
-    <string name="miraclo_about_patch">Patch <xliff:g id="date" example="1 Oct 2026">%s</xliff:g></string>
     <string name="miraclo_about_maintainer_title">Maintainer</string>
     <string name="miraclo_maintainer_name" translatable="false">PSP</string>
     <string name="miraclo_about_update">Update</string>
-    <string name="miraclo_about_no_updates">Updates will appear here in a later build</string>
-    <string name="miraclo_about_source_title">Source code</string>
-    <string name="miraclo_about_source_summary" translatable="false">github.com/MiraCLO-OS</string>
-    <string name="miraclo_island_footer">The island never shows on the lock screen or in full-screen apps.</string>
+    <string name="miraclo_about_no_updates">Updates are coming in a later build</string>
+    <string name="miraclo_island_footer">Hidden on the lock screen and in full-screen apps.</string>
 </resources>

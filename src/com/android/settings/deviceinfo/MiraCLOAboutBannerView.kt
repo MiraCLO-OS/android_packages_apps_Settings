@@ -62,13 +62,14 @@ class MiraCLOAboutBannerView @JvmOverloads constructor(
 
     private val bmpPaint = Paint(Paint.ANTI_ALIAS_FLAG or Paint.FILTER_BITMAP_FLAG)
     private val shade = Paint()
+    // The MiraCLO wordmark: "Mira" in marble white, "CLO" in the brand blue.
     private val namePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = 0xFFFFFFFF.toInt()
-        textAlign = Paint.Align.CENTER
-        typeface = Typeface.create(Typeface.DEFAULT, 600, false)
+        color = BRAND_WHITE
+        textAlign = Paint.Align.LEFT
+        typeface = Typeface.create(Typeface.DEFAULT, 400, false)
     }
     private val linePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = 0xEBFFFFFF.toInt()
+        color = BRAND_WHITE
         textAlign = Paint.Align.LEFT
         typeface = Typeface.create(Typeface.DEFAULT, 400, false)
     }
@@ -108,7 +109,7 @@ class MiraCLOAboutBannerView @JvmOverloads constructor(
     private var pressAnimator: ValueAnimator? = null
 
     init {
-        contentDescription = "MiraCLO " + parts.joinToString(" ")
+        contentDescription = NAME + " " + parts.joinToString(" ")
         isClickable = true
     }
 
@@ -183,15 +184,23 @@ class MiraCLOAboutBannerView @JvmOverloads constructor(
         clip.addRoundRect(card, dp(RADIUS), dp(RADIUS), Path.Direction.CW)
         shade.shader = android.graphics.LinearGradient(0f, card.top, 0f, card.bottom,
             0x1A000000, 0x38000000, Shader.TileMode.CLAMP)
-        val s = card.width() / 357f
-        namePaint.textSize = 62f * s * density
-        linePaint.textSize = 18f * s * density
+        // Sized to the card (357 dp wide in the ColorOS banner), and never wider than it.
+        val s = card.width() / dp(357f)
+        namePaint.textSize = dp(46f) * s
+        fitWidth(namePaint, NAME, card.width() * 0.62f)
+        linePaint.textSize = dp(15f) * s
+        fitWidth(linePaint, parts.joinToString("   |   "), card.width() * 0.8f)
         pillText.textSize = sp(16f)
         val pw = pillText.measureText(updateLabel) + dp(52f)
         val ph = dp(44f)
         val cy = card.top + card.height() * 0.81f
         pill.set(card.centerX() - pw / 2f, cy - ph / 2f, card.centerX() + pw / 2f, cy + ph / 2f)
         pillGlow.color = 0x01FFFFFF
+    }
+
+    private fun fitWidth(paint: Paint, text: String, max: Float) {
+        val w = paint.measureText(text)
+        if (w > max) paint.textSize *= max / w
     }
 
     /** Fills [card] with the wallpaper (centre crop), zoomed by [zoom]. */
@@ -224,13 +233,25 @@ class MiraCLOAboutBannerView @JvmOverloads constructor(
         val textA = (255 * a).toInt().coerceIn(0, 255)
         namePaint.alpha = textA
         namePaint.setShadowLayer(dp(10f), 0f, dp(1f), 0x40000000)
-        val nameBase = card.top + card.height() * 0.43f + rise
-        canvas.drawText("MiraCLO", card.centerX(), nameBase, namePaint)
-        drawVersionLine(canvas, nameBase + linePaint.textSize * 1.9f + rise * 0.5f, textA)
+        val nameBase = card.top + card.height() * 0.46f + rise
+        drawName(canvas, nameBase, textA)
+        drawVersionLine(canvas, nameBase + linePaint.textSize * 2.1f + rise * 0.5f, textA)
 
         // Update: a glass pill (the wallpaper blurred under it), a soft glow around it.
         drawPill(canvas, textA)
         canvas.restore()
+    }
+
+    private fun drawName(canvas: Canvas, base: Float, alpha: Int) {
+        val mira = "Mira"
+        val clo = "CLO"
+        val x = card.centerX() - namePaint.measureText(NAME) / 2f
+        namePaint.color = BRAND_WHITE
+        namePaint.alpha = alpha
+        canvas.drawText(mira, x, base, namePaint)
+        namePaint.color = BRAND_BLUE
+        namePaint.alpha = alpha
+        canvas.drawText(clo, x + namePaint.measureText(mira), base, namePaint)
     }
 
     private fun drawVersionLine(canvas: Canvas, base: Float, alpha: Int) {
@@ -239,7 +260,7 @@ class MiraCLOAboutBannerView @JvmOverloads constructor(
         val widths = parts.map { linePaint.measureText(it) }
         val total = widths.sum() + gap * 2 * (parts.size - 1)
         var x = card.centerX() - total / 2f
-        linePaint.alpha = (0xEB * alpha / 255)
+        linePaint.alpha = (0xE6 * alpha / 255)
         linePaint.setShadowLayer(dp(8f), 0f, dp(1f), 0x40000000)
         sepPaint.alpha = (0x99 * alpha / 255)
         val sepTop = base - linePaint.textSize * 0.78f
@@ -354,6 +375,10 @@ class MiraCLOAboutBannerView @JvmOverloads constructor(
 
     companion object {
         private const val TAG = "MiraCLOAboutBanner"
+        private const val NAME = "MiraCLO"
+        /** MiraCLO brand colours (wordmark): marble white and CLO blue. */
+        private const val BRAND_WHITE = 0xFFEEF3FA.toInt()
+        private const val BRAND_BLUE = 0xFF7E99FF.toInt()
         /** Action the MiraCLO updater will answer; until it exists, the system one is used. */
         const val ACTION_MIRACLO_UPDATES = "co.aospa.miraclo.action.CHECK_UPDATES"
         private const val SIDE = 16f
