@@ -77,6 +77,13 @@
     <string name="miraclo_lg_volume_summary">MiraCLO volume panel</string>
     <string name="miraclo_lg_power_title">Power menu</string>
     <string name="miraclo_lg_power_summary">Power button menu</string>
+    <string name="miraclo_lg_look_title">Look</string>
+    <string name="miraclo_lg_refraction_title">Refraction (experimental)</string>
+    <string name="miraclo_lg_refraction_summary">Bends what\'s behind the glass at its edges. Quick Settings for now</string>
+    <string name="miraclo_split_shade_title">Split shade</string>
+    <string name="miraclo_split_shade_summary">Swipe down on the left for notifications, on the right for Quick Settings</string>
+    <string name="miraclo_split_shade_swap_title">Swap sides</string>
+    <string name="miraclo_split_shade_swap_summary">Quick Settings on the left, notifications on the right</string>
     <string name="miraclo_liquid_glass_footer">The lock screen and pop-up notifications stay solid for readability.</string>
     <string name="miraclo_volume_panel_title">MiraCLO volume panel</string>
     <string name="miraclo_volume_panel_summary">Compact edge panel. Turn off for the Android panel</string>

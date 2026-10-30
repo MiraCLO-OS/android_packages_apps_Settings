@@ -19,6 +19,18 @@
         settings:controller="com.android.settings.display.MiraCLOLiquidGlassMainSwitchPreferenceController" />
 
     <PreferenceCategory
+        android:key="miraclo_lg_look"
+        android:title="@string/miraclo_lg_look_title">
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_lg_refraction"
+            android:dependency="miraclo_liquid_glass"
+            android:title="@string/miraclo_lg_refraction_title"
+            android:summary="@string/miraclo_lg_refraction_summary"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="miraclo_lg_places"
         android:title="@string/miraclo_liquid_glass_places_title">
 

@@ -94,6 +94,20 @@
             android:entryValues="@array/miraclo_qs_style_values"
             android:defaultValue="0" />
 
+        <!-- MiraCLO: split shade, left side for notifications, right side for Quick Settings -->
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_split_shade"
+            android:title="@string/miraclo_split_shade_title"
+            android:summary="@string/miraclo_split_shade_summary"
+            android:defaultValue="false" />
+
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="miraclo_split_shade_swap"
+            android:dependency="miraclo_split_shade"
+            android:title="@string/miraclo_split_shade_swap_title"
+            android:summary="@string/miraclo_split_shade_swap_summary"
+            android:defaultValue="false" />
+
         <!-- MiraCLO: Liquid Glass, a page to choose where SystemUI uses it -->
         <Preference
             android:key="miraclo_liquid_glass_settings"
