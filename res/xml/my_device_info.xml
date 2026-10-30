@@ -27,54 +27,48 @@
         android:selectable="false"
         settings:isPreferenceVisible="false"/>
 
-    <!-- MiraCLO: About hero (MiraCLOAboutHeroView) -->
-    <com.android.settingslib.widget.LayoutPreference
+    <!-- MiraCLO: banner with the user's wallpaper (MiraCLOAboutBannerView) -->
+    <com.android.settings.deviceinfo.MiraCLOAboutBannerPreference
         android:key="miraclo_about_banner"
         android:layout="@layout/miraclo_about_banner"
         android:selectable="false"/>
 
-    <!-- MiraCLO: maintainer and source -->
+    <!-- MiraCLO: device name, then the maintainer, as in the ColorOS layout -->
     <PreferenceCategory
-        android:key="miraclo_maintainer_category"
-        android:title="@string/miraclo_about_maintainer_title">
-
-        <Preference
-            android:key="miraclo_maintainer"
-            android:title="@string/miraclo_maintainer_name"
-            android:selectable="false"
-            settings:searchable="false"/>
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="miraclo_links_category">
-
-        <Preference
-            android:key="miraclo_source"
-            android:title="@string/miraclo_about_source_title"
-            android:summary="@string/miraclo_about_source_summary"
-            settings:searchable="false">
-            <intent android:action="android.intent.action.VIEW"
-                    android:data="https://github.com/MiraCLO-OS" />
-        </Preference>
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="basic_info_category"
-        android:selectable="false"
-        android:title="@string/my_device_info_basic_info_category_title">
+        android:key="miraclo_device_name_category"
+        android:selectable="false">
 
         <!-- Device name -->
         <com.android.settings.widget.ValidatedEditTextPreference
             android:key="device_name"
+            android:layout="@layout/miraclo_about_row_nav"
             android:order="1"
             android:title="@string/my_device_info_device_name_preference_title"
             android:summary="@string/summary_placeholder"
             settings:controller="com.android.settings.deviceinfo.DeviceNamePreferenceController"
             settings:enableCopying="true"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="miraclo_maintainer_category">
+
+        <Preference
+            android:key="miraclo_maintainer"
+            android:layout="@layout/miraclo_about_row"
+            android:title="@string/miraclo_about_maintainer_title"
+            android:summary="@string/miraclo_maintainer_name"
+            android:selectable="false"
+            settings:searchable="false"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="basic_info_category"
+        android:selectable="false">
 
         <!-- Android version -->
         <Preference
             android:key="firmware_version"
+            android:layout="@layout/miraclo_about_row_nav"
             android:order="2"
             android:title="@string/firmware_version"
             android:summary="@string/summary_placeholder"
@@ -84,6 +78,7 @@
         <!-- MiraCLO version -->
         <Preference
             android:key="miraclo_version"
+            android:layout="@layout/miraclo_about_row"
             android:order="3"
             android:title="MiraCLO version"
             android:summary="@string/summary_placeholder"
@@ -93,6 +88,7 @@
         <!-- Account name -->
         <Preference
             android:key="branded_account"
+            android:layout="@layout/miraclo_about_row"
             android:order="4"
             android:title="@string/my_device_info_account_preference_title"
             android:summary="@string/summary_placeholder"
@@ -103,12 +99,12 @@
 
     <PreferenceCategory
         android:key="device_detail_category"
-        android:selectable="false"
-        android:title="@string/my_device_info_device_details_category_title">
+        android:selectable="false">
 
         <!-- Model & hardware -->
         <Preference
             android:key="device_model"
+            android:layout="@layout/miraclo_about_row_nav"
             android:order="10"
             android:title="@string/model_info"
             android:summary="@string/summary_placeholder"
@@ -120,6 +116,7 @@
         <!-- EID -->
         <com.android.settings.deviceinfo.simstatus.SimEidInfoPreference
             android:key="eid_info"
+            android:layout="@layout/miraclo_about_row_nav"
             android:order="31"
             android:title="@string/status_eid"
             android:positiveButtonText="@string/dlg_ok"
@@ -131,6 +128,7 @@
         <!-- SIM status -->
         <Preference
             android:key="sim_status"
+            android:layout="@layout/miraclo_about_row_nav"
             android:order="18"
             android:title="@string/sim_status_title"
             settings:keywords="@string/keywords_sim_status"
@@ -141,6 +139,7 @@
         <!-- Battery information -->
         <Preference
             android:key="battery_info"
+            android:layout="@layout/miraclo_about_row_nav"
             android:order="43"
             android:title="@string/battery_info"
             android:fragment="com.android.settings.deviceinfo.batteryinfo.BatteryInfoFragment"
@@ -150,6 +149,7 @@
         <Preference
             android:title="@string/radio_info_title"
             android:key="radio_info_settings"
+            android:layout="@layout/miraclo_about_row_nav"
             android:order="44"
             settings:controller="co.aospa.settings.deviceinfo.RadioInfoPreferenceController">
             <intent android:action="android.intent.action.MAIN"
@@ -159,12 +159,12 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="device_identifiers_category"
-        android:title="@string/my_device_info_device_identifiers_category_title">
+        android:key="device_identifiers_category">
 
         <!--IP address -->
         <Preference
             android:key="wifi_ip_address"
+            android:layout="@layout/miraclo_about_row"
             android:order="44"
             android:title="@string/wifi_ip_address"
             android:summary="@string/summary_placeholder"
@@ -174,6 +174,7 @@
         <!-- Wi-Fi MAC address -->
         <Preference
             android:key="saved_accesspoints_wifi_mac_address"
+            android:layout="@layout/miraclo_about_row_nav"
             android:order="45"
             android:title="@string/status_wifi_mac_address"
             android:summary="@string/view_saved_network"
@@ -183,6 +184,7 @@
         <!-- Factory Wi-Fi MAC address -->
         <Preference
             android:key="wifi_mac_address"
+            android:layout="@layout/miraclo_about_row"
             android:order="46"
             android:title="@string/status_device_wifi_mac_address"
             android:summary="@string/summary_placeholder"
@@ -192,6 +194,7 @@
         <!-- Bluetooth address -->
         <Preference
             android:key="bt_address"
+            android:layout="@layout/miraclo_about_row"
             android:order="47"
             android:title="@string/status_bt_address"
             android:summary="@string/summary_placeholder"
@@ -201,6 +204,7 @@
         <!-- Device up time -->
         <Preference
             android:key="up_time"
+            android:layout="@layout/miraclo_about_row"
             android:order="48"
             android:title="@string/status_up_time"
             android:summary="@string/summary_placeholder"
@@ -209,6 +213,7 @@
         <!-- Manual -->
         <Preference
             android:key="manual"
+            android:layout="@layout/miraclo_about_row_nav"
             android:order="50"
             android:title="@string/manual">
             <intent android:action="android.settings.SHOW_MANUAL"
@@ -218,6 +223,7 @@
         <!-- Feedback on the device -->
         <Preference
             android:key="device_feedback"
+            android:layout="@layout/miraclo_about_row_nav"
             android:order="51"
             android:title="@string/device_feedback"
             settings:keywords="@string/keywords_device_feedback"/>
@@ -225,6 +231,7 @@
         <!-- Device FCC equipment id -->
         <Preference
             android:key="fcc_equipment_id"
+            android:layout="@layout/miraclo_about_row"
             android:order="52"
             android:title="@string/fcc_equipment_id"
             android:summary="@string/summary_placeholder"/>
@@ -232,6 +239,7 @@
         <!-- Build number -->
         <Preference
             android:key="build_number"
+            android:layout="@layout/miraclo_about_row_stacked"
             android:order="53"
             android:title="@string/build_number"
             android:summary="@string/summary_placeholder"
@@ -242,6 +250,7 @@
     <!-- Software version -->
     <Preference
         android:key="software_version"
+        android:layout="@layout/miraclo_about_row"
         android:order="44"
         android:title="@string/software_version"
         android:summary="@string/summary_placeholder"
@@ -251,6 +260,7 @@
     <!-- Storage size, including two items: ROM and RAM total size -->
     <Preference
         android:key="key_storage_total_size"
+        android:layout="@layout/miraclo_about_row"
         android:order="45"
         android:title="@string/ram_total_size"
         android:summary="@string/summary_placeholder"
@@ -259,12 +269,12 @@
         settings:enableCopying="true"/>
 
     <PreferenceCategory
-        android:key="legal_category"
-        android:title="@string/my_device_info_legal_category_title">
+        android:key="legal_category">
 
         <!-- Legal information -->
         <Preference
             android:key="legal_container"
+            android:layout="@layout/miraclo_about_row_nav"
             android:order="15"
             android:title="@string/legal_information"
             android:fragment="com.android.settings.LegalSettings"/>
@@ -272,6 +282,7 @@
         <!-- Regulatory labels -->
         <Preference
             android:key="regulatory_info"
+            android:layout="@layout/miraclo_about_row_nav"
             android:order="16"
             android:title="@string/regulatory_labels">
             <intent android:action="android.settings.SHOW_REGULATORY_INFO"
@@ -281,6 +292,7 @@
         <!-- Safety & regulatory manual -->
         <Preference
             android:key="safety_info"
+            android:layout="@layout/miraclo_about_row_nav"
             android:order="17"
             android:title="@string/safety_and_regulatory_info"/>
     </PreferenceCategory>
