@@ -159,6 +159,13 @@
             android:key="developer_options"
             settings:controller="com.android.settings.system.DeveloperOptionsController"/>
 
+        <!-- MiraCLO: Spoof -->
+        <Preference
+            android:key="miraclo_spoof_settings"
+            android:title="@string/miraclo_spoof_title"
+            android:summary="@string/miraclo_spoof_summary"
+            android:fragment="com.android.settings.system.MiraCLOSpoofSettings" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

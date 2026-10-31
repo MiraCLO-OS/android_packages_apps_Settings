@@ -84,6 +84,10 @@
     <string name="miraclo_lg_glow_summary">A soft light under your finger in Quick Settings and the island, and on the music card</string>
     <string name="miraclo_split_shade_title">Split shade</string>
     <string name="miraclo_split_shade_summary">Swipe down on the left for notifications, on the right for Quick Settings</string>
+    <string name="miraclo_spoof_title">Spoof</string>
+    <string name="miraclo_spoof_summary">Hide developer status, ignore secure flag</string>
+    <string name="miraclo_spoof_apps_title">What apps can see</string>
+    <string name="miraclo_spoof_screen_title">Screen</string>
     <string name="miraclo_shade_chips_title">Status bar chips</string>
     <string name="miraclo_shade_chips_summary">Show the clock and icons at the top of the shade inside chips</string>
     <string name="miraclo_liquid_glass_footer">The lock screen and pop-up notifications stay solid for readability.</string>

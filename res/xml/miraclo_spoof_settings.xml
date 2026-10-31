@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: MiraCLO
+     SPDX-License-Identifier: Apache-2.0
+-->
+<!-- MiraCLO: Settings > System > Spoof. Same keys and screens as before, only moved here. -->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:key="miraclo_spoof_settings"
+    android:title="@string/miraclo_spoof_title">
+
+    <PreferenceCategory
+        android:key="miraclo_spoof_apps"
+        android:title="@string/miraclo_spoof_apps_title">
+
+        <!-- From Developer options -->
+        <Preference
+            android:key="hide_developer_status_settings"
+            android:title="@string/hide_developer_status_title"
+            android:summary="@string/hide_developer_status_summary"
+            android:fragment="co.aospa.settings.development.HideDeveloperStatusSettings" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="miraclo_spoof_screen"
+        android:title="@string/miraclo_spoof_screen_title">
+
+        <!-- From Security & privacy > More security & privacy -->
+        <co.aospa.framework.preference.SecureSettingSwitchPreference
+            android:key="window_ignore_secure"
+            android:title="@string/ignore_window_secure_title"
+            android:summary="@string/ignore_window_secure_summary"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+</PreferenceScreen>
