@@ -11,16 +11,27 @@
     <string name="miraclo_qs_style_title">Quick Settings style</string>
     <string name="miraclo_qs_style_default">Default</string>
     <string name="miraclo_qs_style_coloros">ColorOS</string>
+    <string name="miraclo_qs_style_ios">iOS style</string>
+    <string name="miraclo_qs_style_nothing">Nothing style</string>
+    <string name="miraclo_qs_style_oneui">One UI style</string>
+    <string name="miraclo_qs_style_summary">%s. In Quick Settings, tap Edit controls to move, resize, add or remove anything</string>
 
     <string-array name="miraclo_qs_style_entries" translatable="false">
         <item>@string/miraclo_qs_style_default</item>
         <item>@string/miraclo_qs_style_coloros</item>
+        <item>@string/miraclo_qs_style_ios</item>
+        <item>@string/miraclo_qs_style_nothing</item>
+        <item>@string/miraclo_qs_style_oneui</item>
     </string-array>
 
-    <!-- Stored in Settings.Secure "miraclo_qs_style"; SystemUI reads 0 = Default, 1 = ColorOS -->
+    <!-- Stored in Settings.Secure "miraclo_qs_style"; SystemUI reads 0 = Default, 1 = ColorOS,
+         2 = iOS style, 3 = Nothing style, 4 = One UI style -->
     <string-array name="miraclo_qs_style_values" translatable="false">
         <item>0</item>
         <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
     </string-array>
 
     <!-- Settings > Notifications > Dynamic Island -->

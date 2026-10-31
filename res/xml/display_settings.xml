@@ -92,6 +92,7 @@
             android:title="@string/miraclo_qs_style_title"
             android:entries="@array/miraclo_qs_style_entries"
             android:entryValues="@array/miraclo_qs_style_values"
+            android:summary="@string/miraclo_qs_style_summary"
             android:defaultValue="0" />
 
         <!-- MiraCLO: Android 17 Dual Shade, left side for notifications, right side for Quick
